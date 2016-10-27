@@ -1,6 +1,4 @@
-lab4
+Parking Pal
 ====
 
-Lab 4: Server-side backend web development
-
-Originally created by Scott Klemmer, Michael Bernstein, and a coalition of TAs. This version forked from https://github.com/IntroHCI/lab4 and modified by Philip Guo.
+A platform where users can rent their private parking spots (e.g. garages, driveways etc) on a pay per length basis.
