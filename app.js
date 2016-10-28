@@ -11,7 +11,8 @@ var handlebars = require('express3-handlebars')
 var index = require('./routes/index');
 var search = require('./routes/search');	// Added by Sushant
 var help = require('./routes/help');		// Added by Sushant
-var result = require('./routes/results');
+var results = require('./routes/results');
+var payment = require('./routes/payment'); 
 // Example route
 // var user = require('./routes/user');
 
@@ -42,6 +43,7 @@ app.get('/', index.view);
 app.get('/search', search.view);			// Added by Sushant
 app.get('/help', help.view);				// Added by Sushant
 app.get('/results', results.view); 			// Added by Oliver
+app.get('/payment', payment.view); 
 // Example route
 // app.get('/users', user.list);
 
