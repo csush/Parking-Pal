@@ -9,8 +9,12 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
-var search = require('./routes/search');	// Added by Sushant
-var help = require('./routes/help');		// Added by Sushant
+var search = require('./routes/search');			// Added by Sushant
+var help = require('./routes/help');				// Added by Sushant
+var hostentry = require('./routes/host_entry');		// Added by Sushant
+var hostsubmit = require('./routes/host_submit')	// Added by Sushant
+var results = require('./routes/results');			// Added by Oliver
+var payment = require('./routes/payment');			// Added by Oliver
 // Example route
 // var user = require('./routes/user');
 
@@ -40,6 +44,11 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/search', search.view);			// Added by Sushant
 app.get('/help', help.view);				// Added by Sushant
+app.get('/host_entry', hostentry.view);		// Added by Sushant
+app.get('/host_submit', hostsubmit.view);	// Added by Sushant
+app.get('/results', results.view);
+app.get('/payment', payment.view);
+
 // Example route
 // app.get('/users', user.list);
 
