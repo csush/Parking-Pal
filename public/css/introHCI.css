@@ -13,10 +13,13 @@
 	position: relative;
 	background: none;
      text-align: center;
+     background-color: #4B0082;
 }
 
 .jumbotron h1{
      text-align: center;
+     color: #ffffff;
+     text-shadow: 2px 2px black;
 }
 
 .jumbotron:after {
@@ -35,6 +38,20 @@
      color: #6e6e6e;
 }
 
+.container {
+     margin: auto;
+     padding: 10px;
+}
 .project a {
      text-align: center;
 }
+
+.col-md-3 {
+     margin: 0 auto;
+     float: none;
+} 
+
+#help-btn {
+     right: 100;
+}
+
