@@ -36,7 +36,7 @@
 }
 
 .jumbotron p {
-     color: #6e6e6e;
+     color: #ffffff;
 }
 
 .container {
@@ -50,6 +50,7 @@
 .col-md-3 {
      margin: 0 auto;
      float: none;
+     border: 
 } 
 
 #help-btn {
