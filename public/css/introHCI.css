@@ -20,6 +20,7 @@
      text-align: center;
      color: #ffffff;
      text-shadow: 2px 2px black;
+     font-family: 'Lobster', sans-serif;
 }
 
 .jumbotron:after {
