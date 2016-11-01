@@ -45,18 +45,32 @@
      margin: auto;
      padding: 10px;
 }
+
+.container p{
+     text-align: center;
+}
+
 .project a {
      text-align: center;
 }
 
 .well {
-     background: rgb(196, 192, 198);
+     border-radius: 10px;
+     border-color: rgb(255, 255, 255);
 }
 
 .col-md-3 {
      margin: 0 auto;
      float: none;
      text-align: center;
+} 
+
+.col-md-3 a {
+     text-align: left;
+} 
+
+#back-button {
+     text-align: left;
 } 
 
 #help-btn {

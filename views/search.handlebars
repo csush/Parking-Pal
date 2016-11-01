@@ -8,6 +8,8 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/introHCI.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+
 	<!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -25,9 +27,10 @@
 		</div>
 
     
-    <a href='/' class="btn btn-default" type="submit">Back</a>
+   
 
 		<div class="col-md-3">
+       <a href='/' class="btn btn-default" type="submit" id='back-button'>Back</a>
 			<h4>Where?</h4>
       <form class="navbar-form" role="search">
         <div class="input-group add-on">
@@ -42,7 +45,6 @@
    
    		<h4>When?</h4>
       <div class="row">
-        <div class='col-sm-6'>
             <div class="form-group">
                 <div class='input-group date' id='datetimepicker1'>
                     <input type='text' class="form-control" />
@@ -51,7 +53,6 @@
                     </span>
                 </div>
             </div>
-        </div>
         <script type="text/javascript">
             $(function () {
                 $('#datetimepicker1').datetimepicker();
