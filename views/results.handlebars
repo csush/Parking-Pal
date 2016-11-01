@@ -11,6 +11,14 @@
   <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Itim|Raleway|Rubik|Lobster">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" /> 
+
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+
 </head>
 
 <body>
@@ -18,9 +26,29 @@
     <h1>Parking Pal</h1>
     <p>Find & Rent Parking Spots</p>
   </div>
+
+      <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+
   	<div class='container'>
 		<div class="col-md-3">
 			<h4>Here are the results of your search</h4>
+
+
     		<div class="input-group add-on">
       			<div class="input-group-btn">
         			<div id="mapid"></div>
@@ -39,5 +67,8 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSY9pYyqipkYqlYksoNeCaCPqOAof9K04&callback=initMap">
+    </script>
 </body>
 </html>
