@@ -2,25 +2,28 @@
 
 <html>
 <head>
-	<title>Search Results</title>	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/css/introHCI.css" rel="stylesheet">
-     
+  <title>Parking Pal</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/css/introHCI.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Itim|Raleway|Rubik|Lobster">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" /> 
 </head>
 
 <body>
-	<div class="container">
-		<div class="jumbotron">
-			<h1>Parking Pal</h1>
-		</div>
+  <div class="jumbotron">
+    <h1>Parking Pal</h1>
+    <p>Find & Rent Parking Spots</p>
+  </div>
+  	<div class='container'>
 		<div class="col-md-3">
 			<h4>Here are the results of your search</h4>
     		<div class="input-group add-on">
       			<div class="input-group-btn">
-        			<a href="/payment" class="btn btn-default" type="submit">Select A Result</a>
+        			<div id="mapid"></div>
       			</div>
     		</div>
    
@@ -30,10 +33,11 @@
         			<a href="/search" class="btn btn-default" type="submit">Cancel</a>
       			</div>
     		</div>
-
-  
+    	</div>
+    </div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 </body>
 </html>
