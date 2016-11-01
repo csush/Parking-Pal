@@ -12,6 +12,7 @@ var index = require('./routes/index');
 var search = require('./routes/search');			// Added by Sushant
 var help = require('./routes/help');				// Added by Sushant
 var login = require('./routes/login');		// Added by Sushant
+var sign_up = require('./routes/sign_up');
 var results = require('./routes/results');			// Added by Oliver
 var payment = require('./routes/payment');			// Added by Oliver
 var host_form = require('./routes/host_form');
@@ -42,10 +43,12 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.view);
+app.get('/', login.view);
+app.get('/index', index.view);
 app.get('/search', search.view);			// Added by Sushant
 app.get('/help', help.view);				// Added by Sushant
 app.get('/login', login.view);
+app.get('/sign_up', sign_up.view);
 app.get('/results', results.view);
 app.get('/payment', payment.view);
 app.get('/payment_success', payment_success.view);

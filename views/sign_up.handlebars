@@ -2,14 +2,14 @@
 
 <html>
 <head>
-	<title>Parking Pal</title>	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/css/introHCI.css" rel="stylesheet">
+  <title>Parking Pal</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/css/introHCI.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/login.css">
-	<!-- this is a comment in HTML -->
+  <!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,8 +31,10 @@
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="inputEmail" class="form-control" placeholder="Name" required autofocus>
                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
@@ -40,16 +42,10 @@
                 </div>
                 <a href="/index" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</a>
             </form><!-- /form -->
-            <a href="#" class="forgot-password">
-                Forgot password?
-            </a>
-            <a href="/sign_up" class="forgot-password">
-                Don't have an account?
-            </a>
         </div><!-- /card-container -->
     </div><!-- /container -->
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
   <script type="/js/login.js"></script>
 </body>
 </html>
