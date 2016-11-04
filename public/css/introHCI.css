@@ -97,9 +97,8 @@ html, body {
 #proceed-button {
      border-radius: 20px;
      background: rgb(75, 0, 130);
-     color: #4B0082;
+     color: white;
      border-color: #4B0082;
-     text-align: right;
 }
 
 #mapid {
