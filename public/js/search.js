@@ -73,14 +73,16 @@ function initMap() {
     position: myLatlng,
     title:"Hello World!"
   });
-  var myLatlng = new google.maps.LatLng(32.878871,-117.237490);
-  var marker = new google.maps.Marker({
-    position: myLatlng,
+  marker.setMap(map);
+
+  var myLatlng2 = new google.maps.LatLng(32.877754,-117.2325977);
+  var marker2 = new google.maps.Marker({
+    position: myLatlng2,
     title:"Hello World!"
   });
 
   // To add the marker to the map, call setMap();
-  marker.setMap(map);
+  marker2.setMap(map);
 
   // // get length of data
   // var len = data.markers.length;
