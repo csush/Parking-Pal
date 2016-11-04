@@ -9,6 +9,7 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="/css/introHCI.css" rel="stylesheet">
+  <link href="/css/login.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Itim|Raleway|Rubik|Lobster">
   <script src="/js/search.js"></script>
@@ -79,33 +80,30 @@
   </div>
     
   <div class="container">
+    <div class="card card-container">
+      <form class="form-signin">
 
-      <input id="pac-input" class="controls" type="text"
-          placeholder="Enter a location">
-      
-  <!--     <div id="type-selector" class="controls">
-   -->
-  <div class="form-group row">
-    <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Start</label>
-    <div class="col-xs-5">
-      <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-    </div>
+        <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+
+        <!--<div class="form-group row">-->
+        <label for="example-datetime-local-input">Start</label>
+        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input"><br>
+        <!--</div>-->
+        <!--<div class="form-group row">-->
+        <label for="example-datetime-local-input">End</label>
+        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input"><br>
+        <!--</div>-->
+        <label for='price-to-pay'>Price Point</label>
+        <input class="form-control" placeholder="$ / day" name="srch-term" id="srch-term" type="text"><br>
+
+        <a href='/payment' class="btn btn-default" type="submit" id='proceed-button'>Proceed&nbsp;<i class='glyphicon glyphicon-chevron-right'></i></a>
+        <a href='/index'>&nbsp;&nbsp;Cancel</a>
+        
+      </form>
   </div>
-  <div class="form-group row">
-    <label for="example-datetime-local-input" class="col-xs-2 col-form-label">End</label>
-    <div class="col-xs-6">
-      <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-    </div>
-  </div>
-
-        <input class="form-control" placeholder="$" name="srch-term" id="srch-term" type="text">
-
-        <div class="input-group-btn">/day</div>
-      
-      <!-- </div> -->
-  </div>
-
-    <div id="map"></div>
+</div>
+  
+  <div class='container' id="map"></div>
 
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSY9pYyqipkYqlYksoNeCaCPqOAof9K04&libraries=places&callback=initMap"

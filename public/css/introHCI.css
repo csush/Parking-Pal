@@ -94,6 +94,14 @@ html, body {
      border-color: #4B0082;
 }
 
+#proceed-button {
+     border-radius: 20px;
+     background: rgb(75, 0, 130);
+     color: #4B0082;
+     border-color: #4B0082;
+     text-align: right;
+}
+
 #mapid {
      height: 180px;
 }
