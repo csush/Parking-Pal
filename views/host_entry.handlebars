@@ -33,30 +33,34 @@
     include the remember me checkbox
     -->
     <div class="container">
-
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="spot-location">Location of spot</label>
+                <input type="text" id="inputEmail" class="form-control" placeholder="Address" required autofocus>
+                <div class="form-group" required autofocus>
+                    <label for="type-of-spot">Type of spot</label>
+                    <select class="form-control" id="sel1">
+                        <option value="" disabled selected>Select a type</option>
+                        <option>Parking Lot</option>
+                        <option>Garage</option>
+                        <option>Driveway</option>
+                    </select>
+                    <br>
+                    <label for="spot-desc">Describe the spot</label>
+                    <textarea class="form-control" rows="3" id="spot-description" placeholder='Surrounding area, landmarks nearby etc...'></textarea>
+                </div>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div>
-                <a href="/index" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</a><br>
+                <a href="/index" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Add Spot</a>
             </form>
-            <div class='col-md-3'>
-                <a href="#" class="forgot-password">Forgot password?&nbsp;</a>
-                <a href="/sign_up" class="forgot-password">New user?</a>
-                <br>
-                <a href="/help" type="submit"><i class='glyphicon glyphicon-info-sign'></i>&nbsp;Help</a>
+            <br>
+            <div class="col-xs-12 text-center">
+                <a href="/index" class="submit"><i class='glyphicon glyphicon-home'></i>&nbsp;Home</a>
             </div>
-
-
         </div><!-- /card-container -->
     </div><!-- /container -->
 	<script src="https://code.jquery.com/jquery.js"></script>
