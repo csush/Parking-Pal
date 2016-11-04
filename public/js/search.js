@@ -74,6 +74,9 @@ function initMap() {
     title:"Hello World!"
   });
   marker.setMap(map);
+  marker.addListener('click', function() {
+    window.alert("sometext");
+  });
 
   var myLatlng2 = new google.maps.LatLng(32.877754,-117.2325977);
   var marker2 = new google.maps.Marker({
