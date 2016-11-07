@@ -1,8 +1,18 @@
-var data = require("../../data.json");
+// var data = require("../../data.json");
 
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+
+
+$("#testing").click(function() {
+  //need to implement
+});
+
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -75,7 +85,7 @@ function initMap() {
   });
   marker.setMap(map);
   marker.addListener('click', function() {
-    window.alert("sometext");
+    $('#myModal').modal('show');
   });
 
   var myLatlng2 = new google.maps.LatLng(32.877754,-117.2325977);
