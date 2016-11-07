@@ -55,6 +55,7 @@ app.get('/payment', payment.view);
 app.get('/payment_success', payment_success.view);
 app.get('/host_form', host_form.view);
 app.get('/host_entry', host_entry.view);
+app.get('/search/data', search.projectInfo);
 
 
 // Example route
