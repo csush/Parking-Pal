@@ -3,10 +3,21 @@ $.get("/search/data", print);
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+var lats = new Array();
+var longs = new Array();
 
 function print(result) {
   console.log(result);
+  // console.log(result.friends.length());
+  $.each(result, function( index, value ) {
+    var myLatlng = new google.maps.LatLng(result[index].lat,result[index].long);
+    console.log('Marker at ' + result[index].lat + ',' + result[index].long);
+    lats.push(result[index].lat);
+    longs.push(result[index].long);
+  });
 }
+
+
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -68,28 +79,22 @@ function initMap() {
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
+
+    $.each(lats, function( index, value ) {
+      console.log('trying to add marker ' + value)
+      var myLatlng = new google.maps.LatLng(lats[index],longs[index]);
+
+      var marker = new google.maps.Marker({
+        position: myLatlng,
+      });
+      marker.setMap(map);
+      marker.addListener('click', function() {
+        window.alert("sometext");
+      });
+    });
+
   });
 
-  
-  var myLatlng = new google.maps.LatLng(32.878871,-117.237490);
-
-  var marker = new google.maps.Marker({
-    position: myLatlng,
-    title:"Hello World!"
-  });
-  marker.setMap(map);
-  marker.addListener('click', function() {
-    window.alert("sometext");
-  });
-
-  var myLatlng2 = new google.maps.LatLng(32.877754,-117.2325977);
-  var marker2 = new google.maps.Marker({
-    position: myLatlng2,
-    title:"Hello World!"
-  });
-
-  // To add the marker to the map, call setMap();
-  marker2.setMap(map);
 
   // // get length of data
   // var len = data.markers.length;
