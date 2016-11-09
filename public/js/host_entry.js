@@ -1,9 +1,3 @@
-// This example displays an address form, using the autocomplete feature
-// of the Google Places API to help users fill in the information.
-
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 var placeSearch, autocomplete;
 var componentForm = {
@@ -24,34 +18,31 @@ function initAutocomplete() {
 
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.
-  autocomplete.addListener('place_changed', fillInAddress);
+  autocomplete.addListener('place_changed', function(){
+    getCoordinates(autocomplete);
+}, false);
 }
 
-function fillInAddress() {
-  // Get the place details from the autocomplete object.
+function getCoordinates(autocomplete) {
+  console.log('entered');
   var place = autocomplete.getPlace();
 
-  for (var component in componentForm) {
-    document.getElementById(component).value = '';
-    document.getElementById(component).disabled = false;
-  }
+var lat = place.geometry.location.lat(),
+    long = place.geometry.location.lng();
 
-  // Get each component of the address from the place details
-  // and fill the corresponding field on the form.
-  for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
-    if (componentForm[addressType]) {
-      var val = place.address_components[i][componentForm[addressType]];
-      document.getElementById(addressType).value = val;
-    }
-  }
+          $("#lat").val(lat);
+      $("#long").val(long);
+
 }
 
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
 function geolocate() {
+  console.log('completed');
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
+      $("#lat").val(position.coords.latitude);
+      $("#long").val(position.coords.longitude);
       var geolocation = {
         lat: position.coords.latitude,
         lng: position.coords.longitude

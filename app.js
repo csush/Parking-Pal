@@ -18,6 +18,7 @@ var payment = require('./routes/payment');			// Added by Oliver
 var host_form = require('./routes/host_form');
 var payment_success = require('./routes/payment_success');
 var host_entry = require('./routes/host_entry');
+var add = require('./routes/add');
 // Example route
 // var user = require('./routes/user');
 
@@ -56,6 +57,7 @@ app.get('/payment_success', payment_success.view);
 app.get('/host_form', host_form.view);
 app.get('/host_entry', host_entry.view);
 app.get('/search/data', search.projectInfo);
+app.get('/add', add.addSpot);
 
 
 // Example route
