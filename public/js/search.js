@@ -1,26 +1,14 @@
 
-$.get("/search/data", print);
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-var lats = new Array();
-var longs = new Array();
-
-function print(result) {
-  console.log(result);
-  // console.log(result.friends.length());
-  $.each(result, function( index, value ) {
-    var myLatlng = new google.maps.LatLng(result[index].lat,result[index].long);
-    console.log('Marker at ' + result[index].lat + ',' + result[index].long);
-    lats.push(result[index].lat);
-    longs.push(result[index].long);
-  });
-}
-
-
-
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  $.ajax({
+     async: false,
+     type: 'GET',
+     url: '/search/data',
+     success: function(result) {
+
+
+
+var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 32.877491, lng: -117.235276},
     zoom: 13
   });
@@ -80,34 +68,35 @@ function initMap() {
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
 
-    $.each(lats, function( index, value ) {
-      console.log('trying to add marker ' + value)
-      var myLatlng = new google.maps.LatLng(lats[index],longs[index]);
-
-      var marker = new google.maps.Marker({
-        position: myLatlng,
-      });
-      marker.setMap(map);
-      marker.addListener('click', function() {
-        window.alert("sometext");
-      });
-    });
-
   });
 
+    // $.each(result, function( index, value ) {
+    //   console.log('trying to add marker ' + result[index].lat + ' ' + result[index].long)
+    //   var myLatlng = new google.maps.LatLng(result[index].lat,result[index].long);
 
-  // // get length of data
-  // var len = data.markers.length;
-  // var x = 0;
-  // while(x < len) {
-  
-  //   var myLatlng = new google.maps.LatLng(data.markers[x].lat,data.markers[x].lon);
+    //   var marker = new google.maps.Marker({
+    //     position: myLatlng,
+    //   });
+    //   marker.setMap(map);
+    //   marker.addListener('click', function() {
+    //     window.alert("sometext");
+    //   });
+    // });
+      // var myLatlng = new google.maps.LatLng(32.877491, -117.235276);
+      var i = 0;
+      while (i < result.length) {
+      console.log('trying to add marker ' + result[i].lat + ' ' + result[i].long)
+        var myLatlng = new google.maps.LatLng(result[i].lat,result[i].long);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+        });
+        marker.setMap(map);
+        i++;
+      }
 
-  //   var marker = new google.maps.Marker({
-  //     position: myLatlng,
-  //     title: data.markers[x].title
-  //   });
-  //   marker.setMap(map);
-  // }
+
+     }
+  });
+
 
 }
