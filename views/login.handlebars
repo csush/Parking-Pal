@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Itim|Raleway|Rubik|Lobster">    
     <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'/ > 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -38,16 +39,16 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin">
+            <form class="form-signin" role="form" method="get" action="/check_user">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="email" id="inputEmail" class="form-control" name="username" placeholder="Email address" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div>
-                <a href="/index" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</a><br>
+                <input type="submit" id="submitBtn" class="btn btn-default" value="Sign in"></input>
             </form>
             <div class='col-md-3'>
                 <a href="/sign_up" class="forgot-password">New user?</a>

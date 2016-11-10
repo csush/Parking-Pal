@@ -19,6 +19,7 @@ var host_form = require('./routes/host_form');
 var payment_success = require('./routes/payment_success');
 var host_entry = require('./routes/host_entry');
 var add = require('./routes/add');
+var check_user = require('./routes/check_user');
 // Example route
 // var user = require('./routes/user');
 
@@ -58,7 +59,7 @@ app.get('/host_form', host_form.view);
 app.get('/host_entry', host_entry.view);
 app.get('/search/data', search.projectInfo);
 app.get('/add', add.addSpot);
-
+app.get('/check_user', check_user.check);
 
 // Example route
 // app.get('/users', user.list);
