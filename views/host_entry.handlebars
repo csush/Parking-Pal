@@ -37,12 +37,17 @@
     -->
     <div class="container">
         <div class="card card-container">
-            <form class="form-signin">
+            <form class="form-signin" role="form" method="get" action="/add">
                 <label for="spot-location">Location of spot</label>
 
                 <div id="locationField">
                   <input id="autocomplete" placeholder="Address"  class="form-control
-             onFocus="geolocate()" type="text"></input>
+             onFocus="geolocate()" type="text" name="location"></input>
+                </div>
+
+                <div style="">
+                    <input type="text" id="lat" name="lat">
+                    <input type="text" id="long" name="long">
                 </div>
 
                 <div class="form-group" required autofocus>
@@ -55,13 +60,14 @@
                     </select>
                     <br>
                     <label for="spot-desc">Describe the spot</label>
-                    <textarea class="form-control" rows="3" id="spot-description" placeholder='Surrounding area, landmarks nearby etc...'></textarea>
+                    <textarea class="form-control" rows="3" id="spot-description" placeholder='Surrounding area, landmarks nearby etc...' name="description"></textarea>
                 </div>
-                <a href="/index" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Add Spot</a>
+                <!-- <a href="/index" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Add Spot</a> -->
+        <input type="submit" id="submitBtn" class="btn btn-default" value="Add the friend"></input>
             </form>
             <br>
             <div class="col-xs-12 text-center">
-                <a href="/index" class="submit"><i class='glyphicon glyphicon-home'></i>&nbsp;Home</a>
+                <a href="/index" class="submit btn btn-lg btn-primary btn-block btn-signin"><i class='glyphicon glyphicon-home'></i>&nbsp;Home</a>
             </div>
         </div><!-- /card-container -->
     </div><!-- /container -->

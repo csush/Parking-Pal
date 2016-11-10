@@ -1,8 +1,3 @@
-// var data = require("../../data.json");
-
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()
@@ -15,7 +10,15 @@ $("#testing").click(function() {
 
 
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  $.ajax({
+     async: false,
+     type: 'GET',
+     url: '/search/data',
+     success: function(result) {
+
+
+
+var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 32.877491, lng: -117.235276},
     zoom: 13
   });
@@ -74,41 +77,27 @@ function initMap() {
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
+
+
   });
 
-  
-  var myLatlng = new google.maps.LatLng(32.878871,-117.237490);
+      var i = 0;
+      while (i < result.length) {
+      console.log('trying to add marker ' + result[i].lat + ' ' + result[i].long)
+        var myLatlng = new google.maps.LatLng(result[i].lat,result[i].long);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+        });
+        marker.addListener('click', function(){
+          // $('#myModal').modal('show');
+          });
+        marker.setMap(map);
+        i++;
+      }
 
-  var marker = new google.maps.Marker({
-    position: myLatlng,
-    title:"Hello World!"
+
+     }
   });
-  marker.setMap(map);
-  marker.addListener('click', function() {
-    $('#myModal').modal('show');
-  });
 
-  var myLatlng2 = new google.maps.LatLng(32.877754,-117.2325977);
-  var marker2 = new google.maps.Marker({
-    position: myLatlng2,
-    title:"Hello World!"
-  });
-
-  // To add the marker to the map, call setMap();
-  marker2.setMap(map);
-
-  // // get length of data
-  // var len = data.markers.length;
-  // var x = 0;
-  // while(x < len) {
-  
-  //   var myLatlng = new google.maps.LatLng(data.markers[x].lat,data.markers[x].lon);
-
-  //   var marker = new google.maps.Marker({
-  //     position: myLatlng,
-  //     title: data.markers[x].title
-  //   });
-  //   marker.setMap(map);
-  // }
 
 }
