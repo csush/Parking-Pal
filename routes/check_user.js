@@ -3,10 +3,6 @@
  * GET help page.
  */
 
-exports.view = function(req, res){
-  res.render('add');
-
-};
 
 var data = require("../users.json");
 
