@@ -62,14 +62,21 @@
                     <br>
                     <label for="spot-desc">Describe the spot</label>
                     <textarea class="form-control" rows="3" id="spot-description" placeholder='Surrounding area, landmarks nearby etc...' name="description"></textarea>
+                    <label for="spot-desc">Price / hr</label>
+                    <input class="form-control" rows="3" id="spot-description" placeholder='Hourly rate' type="text" name="price"></input>
                 </div>
                 <!-- <a href="/index" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Add Spot</a> -->
-        <input type="submit" id="submitBtn" class="btn btn-default" value="Add the friend"></input>
-            </form>
-            <br>
-            <div class="col-xs-6 text-center">
-                <a href="/index" class="submit btn btn-lg btn-primary btn-block btn-signin"><i class='glyphicon glyphicon-home'></i>&nbsp;Home</a>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <input type="submit" id="submitBtn" class="btn btn-default" value="Add spot"></input>
+                    </div>
+
+                    <div class="col-xs-6 text-center">
+                    <a href="/index" class="submit btn btn-lg btn-primary btn-block btn-signin"><i class='glyphicon glyphicon-home'></i>&nbsp;Home</a>
+                </div>
             </div>
+            </form>
+
         </div><!-- /card-container -->
     </div><!-- /container -->
 	<script src="https://code.jquery.com/jquery.js"></script>

@@ -13,6 +13,5 @@ exports.check = function(req, res) {
       res.render('index');
     }
     i++;
-  }
-  res.render('login');  
+  } 
 }

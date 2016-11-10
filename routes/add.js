@@ -11,9 +11,7 @@ exports.view = function(req, res){
 var data = require("../data.json");
 
 exports.addSpot = function(req, res) {
-  // Your code goes here
-  console.log("yay, addFriend just ran!");
-  
-  data.friends.push({lat : req.query.lat , long: req.query.long});
+
+  data.friends.push({lat : req.query.lat , long: req.query.long, price:req.query.price});
   res.render('index');
 }
