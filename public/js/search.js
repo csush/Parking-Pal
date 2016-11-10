@@ -89,9 +89,13 @@ var map = new google.maps.Map(document.getElementById('map'), {
           position: myLatlng,
         });
         marker.addListener('click', function(){
-          // $('#myModal').modal('show');
+          $('#myModal').modal('show');
           });
         marker.setMap(map);
+        var infowindow = new google.maps.InfoWindow({
+          content: '$' + result[i].price + '/hr'
+        }); 
+          infowindow.open(map,marker);
         i++;
       }
 
