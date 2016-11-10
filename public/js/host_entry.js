@@ -1,4 +1,8 @@
 
+ $(document).ready(function(){
+$('#hideMe').hide();
+});
+
 var placeSearch, autocomplete;
 var componentForm = {
   street_number: 'short_name',

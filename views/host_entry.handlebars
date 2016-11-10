@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Itim|Raleway|Rubik|Lobster">    
     <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'/ > 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/js/host_entry.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSY9pYyqipkYqlYksoNeCaCPqOAof9K04&libraries=places&callback=initAutocomplete"
         async defer></script>
@@ -45,7 +46,7 @@
              onFocus="geolocate()" type="text" name="location"></input>
                 </div>
 
-                <div style="">
+                <div id="hideMe">
                     <input type="text" id="lat" name="lat">
                     <input type="text" id="long" name="long">
                 </div>
@@ -66,7 +67,7 @@
         <input type="submit" id="submitBtn" class="btn btn-default" value="Add the friend"></input>
             </form>
             <br>
-            <div class="col-xs-12 text-center">
+            <div class="col-xs-6 text-center">
                 <a href="/index" class="submit btn btn-lg btn-primary btn-block btn-signin"><i class='glyphicon glyphicon-home'></i>&nbsp;Home</a>
             </div>
         </div><!-- /card-container -->

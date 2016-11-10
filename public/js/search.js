@@ -1,8 +1,8 @@
 
+
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()
 })
-
 
 $("#testing").click(function() {
   //need to implement
