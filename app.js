@@ -20,6 +20,7 @@ var payment_success = require('./routes/payment_success');
 var host_entry = require('./routes/host_entry');
 var add = require('./routes/add');
 var check_user = require('./routes/check_user');
+var search2 = require('./routes/search2');
 // Example route
 // var user = require('./routes/user');
 
@@ -60,6 +61,7 @@ app.get('/host_entry', host_entry.view);
 app.get('/search/data', search.projectInfo);
 app.get('/add', add.addSpot);
 app.get('/check_user', check_user.check);
+app.get('/search2', search2.view);
 
 // Example route
 // app.get('/users', user.list);
