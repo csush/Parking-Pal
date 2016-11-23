@@ -2,6 +2,20 @@
 
 <html>
 <head>
+  <!-- Google Analytics Content Experiment code -->
+  <script>function utmx_section(){}function utmx(){}(function(){var
+  k='134446414-0',d=document,l=d.location,c=d.cookie;
+  if(l.search.indexOf('utm_expid='+k)>0)return;
+  function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+  indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+  length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+  '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+  '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+  '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+  valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+  '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+  </script><script>utmx('url','A/B');</script>
+  <!-- End of Google Analytics Content Experiment code -->
   <title>Parking Pal</title>  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <meta charset="utf-8">
@@ -163,7 +177,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <!-- <a href="/payment_success" class="btn btn-success">Confirm Purchase</a> -->
-        <a href='/payment_success' class="btn btn-default" type="submit" id='index-button'>Confirm Purchase&nbsp;<i class='glyphicon glyphicon-chevron-right'></i></a>
+        <a href='/payment_success' class="btn btn-default" type="submit" id="confirmpurchase">Confirm Purchase&nbsp;<i class='glyphicon glyphicon-chevron-right'></i></a>
       </div>
     </div>
   </div>
@@ -270,5 +284,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87912013-1', 'auto');
+  ga('send', 'pageview');
+
+  $("#confirmpurchase").click(function() {
+    console.log("hi2");
+    ga('send', 'event', 'purchase', 'click');
+  });
+
+</script>
 </body>
 </html>
