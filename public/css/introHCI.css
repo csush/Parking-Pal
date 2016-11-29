@@ -104,3 +104,13 @@ html, body {
 #mapid {
      height: 180px;
 }
+
+#logout, #help {
+    color: rgb(192,192,192);
+}
+
+#logout:hover, #logout:active, #logout:focus, 
+#help:hover, #help:active, #help:focus {
+    color: rgb(120,120,120);
+}
+

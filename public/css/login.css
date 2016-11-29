@@ -119,16 +119,16 @@ body, html {
 
 
 
-.forgot-password {
-    color: rgb(104, 145, 162);
+.forgot-password, #help {
+    color: rgb(120, 0, 207);
 }
 
 .submit {
     position: relative;
 }
 
-.forgot-password:hover,
-.forgot-password:active,
-.forgot-password:focus{
-    color: rgb(12, 97, 33);
+.forgot-password:hover, .forgot-password:active, .forgot-password:focus,
+#help:hover, #help:active, #help:focus{
+    color: rgb(160, 104, 255);
 }
+
